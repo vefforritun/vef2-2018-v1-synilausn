@@ -1,0 +1,20 @@
+{
+  "name": "v1-synilausn",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "eslint": "eslint *.js **/*.js"
+  },
+  "dependencies": {
+    "ejs": "2.5.7",
+    "express": "4.15.5",
+    "gray-matter": "3.1.1",
+    "markdown-it": "8.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
