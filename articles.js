@@ -14,6 +14,10 @@ const md = new MarkdownIt();
 
 const articlesPath = './articles';
 
+function catchErrors(fn) {
+  return (req, res, next) => fn(req, res, next).catch(next);
+}
+
 /**
  * Les grein úr filePath og skilar efni hennar, bæði lýsigögnum úr frontmatter
  * og efni þáttuðu úr Markdown.
@@ -101,7 +105,7 @@ async function article(req, res, next) {
   return res.render('article', { title, article: foundArticle });
 }
 
-router.get('/', list);
-router.get('/:slug', article);
+router.get('/', catchErrors(list));
+router.get('/:slug', catchErrors(article));
 
 module.exports = router;
